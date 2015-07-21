@@ -1,5 +1,6 @@
 # Object files
 *.o
+*.d
 *.ko
 *.obj
 #*.elf
@@ -10,7 +11,7 @@
 
 # Libraries
 *.lib
-*.a
+#*.a
 *.la
 *.lo
 
@@ -33,4 +34,4 @@
 
 
 *.log
-
+mem_analyser
