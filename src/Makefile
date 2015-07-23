@@ -3,11 +3,13 @@
 #	2015/07/20
 #
 
-LIBS	= -ldwarf -lelf
+CC		= g++
+
+LIBS	= -ldwarf -lelf -lpopt
 CFLAGS	= -Wall
 
 TARGET	= mem_analyser
-OBJS	= main.c
+OBJS	= main.cc parse.cc
 
 
 all: $(TARGET)
@@ -17,3 +19,4 @@ $(TARGET): $(OBJS)
 clean:
 	rm -f *.o
 	rm -f $(TARGET)
+	

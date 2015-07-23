@@ -58,7 +58,7 @@ void print_symbols(Elf *elf, Elf_Scn *scn, Elf32_Shdr *shdr)
 //
 void print_section(Elf *elf)
 {
-	int i = 0;
+	size_t i = 0;
 	size_t  section_nr = 0;
 	Elf_Scn *section = NULL;
 
@@ -74,7 +74,7 @@ void print_section(Elf *elf)
 		section = elf_getscn(elf, i);
 		if (NULL == section) 
 		{
-			printf("get sec[%d] error %s\n", i
+			printf("get sec[%ld] error %s\n", i
 								, elf_errmsg(elf_errno()));
 			break;
 		}
@@ -133,11 +133,7 @@ int main(int argc, char *argv[])
 		printf("elf32_getehdr failed\n");
 		return -1;
 	}
-	
-
 	print_section(elf);
-		
-
 
 	return 0;
 }
